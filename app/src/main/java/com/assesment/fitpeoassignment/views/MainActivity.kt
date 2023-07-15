@@ -32,6 +32,7 @@ import com.assesment.fitpeoassignment.MainApplication
 import com.assesment.fitpeoassignment.R
 import com.assesment.fitpeoassignment.adapters.PhotoListAdapter
 import com.assesment.fitpeoassignment.model.PhotoDetail
+import com.assesment.fitpeoassignment.networkCheck.AppComponent
 import com.assesment.fitpeoassignment.utils.NetworkResult
 import com.assesment.fitpeoassignment.utils.NetworkState
 import com.assesment.fitpeoassignment.viewmodels.MainViewModel

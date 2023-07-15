@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.assesment.fitpeoassignment.model.PhotoDetail
-import com.assesment.fitpeoassignment.networkCheck.OnlineCheckerModule
 import com.assesment.fitpeoassignment.repository.MainRepoIML
 import com.assesment.fitpeoassignment.repository.MainRepository
 import com.assesment.fitpeoassignment.utils.NetworkResult

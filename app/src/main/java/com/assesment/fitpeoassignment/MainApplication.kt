@@ -3,6 +3,8 @@ package com.assesment.fitpeoassignment
 import android.app.Application
 import android.content.Context
 import com.assesment.fitpeoassignment.db.PhotoDatabase
+import com.assesment.fitpeoassignment.networkCheck.AppComponent
+import com.assesment.fitpeoassignment.networkCheck.DaggerAppComponent
 import com.assesment.fitpeoassignment.repository.MainRepository
 
 class MainApplication : Application() {

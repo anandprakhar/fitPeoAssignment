@@ -3,31 +3,30 @@ package com.assesment.fitpeoassignment.repository
 import com.assesment.fitpeoassignment.RetrofitService
 import com.assesment.fitpeoassignment.db.PhotoDatabase
 import com.assesment.fitpeoassignment.model.PhotoDetail
-import com.assesment.fitpeoassignment.networkCheck.OnlineCheckerModule
+import com.assesment.fitpeoassignment.networkCheck.DaggerAppComponent
 import com.assesment.fitpeoassignment.utils.NetworkResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import javax.inject.Inject
-import kotlin.coroutines.coroutineContext
 
 /**
  * Repo class
  */
+
 class MainRepository(
     private val retrofitService: RetrofitService, private val photoDatabase: PhotoDatabase
 ) : MainRepoIML {
 
-    @Inject
-    var onlineChecker = OnlineCheckerModule().onlineChecker()
+//    @Inject
+//    var onlineChecker = OnlineCheckerModule().onlineChecker()
 
     override suspend fun getAllPhotos(): NetworkResult<List<PhotoDetail>> {
-
-        if (!onlineChecker.isOnline) {
-            var responseBody: List<PhotoDetail>? = null
+        val component = DaggerAppComponent.builder().build().getDefaultOnlineChecker()
+        if (!component.isOnline()) {
+            var responseBody: List<PhotoDetail>?
+            //fetching data through async
             val job = CoroutineScope(Dispatchers.IO).async {
                 responseBody = photoDatabase.photoDao().getPhotosList()
                 return@async responseBody
