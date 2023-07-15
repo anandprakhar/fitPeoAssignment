@@ -46,7 +46,6 @@ class PhotoDetailActivity : ComponentActivity() {
                 binding.desc.text = "${photo.title}\n${photo.title}\n${photo.title}"
             }
 
-
         }
 
     }

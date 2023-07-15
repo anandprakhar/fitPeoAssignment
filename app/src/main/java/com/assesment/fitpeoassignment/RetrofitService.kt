@@ -8,7 +8,7 @@ import retrofit2.http.GET
 
 interface RetrofitService {
     @GET("photos")
-    suspend fun getPhotos():List<PhotoDetail>
+    suspend fun getPhotos(): Response<List<PhotoDetail>>
 
     companion object {
         private var retrofitService: RetrofitService? = null

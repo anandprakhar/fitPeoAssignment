@@ -20,12 +20,15 @@ class PhotoListAdapter(val photoList: ArrayList<PhotoDetail>, val mListener: Cli
         val v = LayoutInflater.from(parent.context).inflate(R.layout.list_layout, parent, false)
         return ViewHolder(v)
     }
+
     override fun getItemCount(): Int {
         return photoList.size
     }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(photoList[position])
     }
+
     interface ClicListener {
         fun onClick(photo: PhotoDetail)
     }
@@ -46,6 +49,7 @@ class PhotoListAdapter(val photoList: ArrayList<PhotoDetail>, val mListener: Cli
 
             llParent.setOnClickListener(this)
         }
+
         override fun onClick(view: View?) {
             when (view?.id) {
                 R.id.llParent -> {
