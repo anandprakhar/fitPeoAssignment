@@ -11,7 +11,7 @@ import javax.inject.Inject
  * Online checker class for checking network connection availability
  */
 
-@Module
+
 class DefaultOnlineChecker @Inject constructor() {
     fun isOnline(): Boolean {
         val connectivityManager =

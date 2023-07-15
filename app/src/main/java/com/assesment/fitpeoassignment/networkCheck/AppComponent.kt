@@ -3,7 +3,7 @@ package com.assesment.fitpeoassignment.networkCheck
 import dagger.Component
 
 
-@Component(modules = [DefaultOnlineChecker::class])
+@Component
 interface AppComponent {
     fun getDefaultOnlineChecker(): DefaultOnlineChecker
 }
